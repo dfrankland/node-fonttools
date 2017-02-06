@@ -5,7 +5,7 @@
   "repository": "https://github.com/dfrankland/node-fonttools.git",
   "author": "Dylan Frankland <dylan@frankland.io>",
   "license": "MIT",
-  "main": "build/index.js",
+  "main": "./build/index.js",
   "files": [
     "binding.gyp",
     "src/fonttools.cc",
