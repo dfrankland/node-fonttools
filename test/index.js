@@ -1,7 +1,7 @@
 const test = require('tape');
 const { resolve: resolvePath } = require('path');
 const { readFileSync, writeFileSync, unlinkSync } = require('fs');
-const { default: fonttools, DEFAULT_FONTTOOLS } = require('../build/index');
+const { default: fonttools, DEFAULT_FONTTOOLS } = require('../dist/index');
 
 const paths = {
   fonttools: resolvePath(__dirname, '../fonttools/Lib'),

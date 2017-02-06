@@ -44,7 +44,7 @@ export default {
       },
     ],
   },
-  externals: ['./Release/fonttools.node'],
+  externals: ['../build/Release/fonttools.node'],
   plugins: [
     new webpack.optimize.LimitChunkCountPlugin({ maxChunks: 1 }),
     new webpack.BannerPlugin({
