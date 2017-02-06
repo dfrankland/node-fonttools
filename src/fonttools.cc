@@ -108,6 +108,9 @@ namespace fonttools {
     // Initialize Python interpreter
     Py_Initialize();
 
+    // Go to the future (needed for meaningful tracestacks etc.)
+    PyImport_ImportModule("__future__");
+
     Isolate *isolate = exports->GetIsolate();
     Local<Object> obj = Object::New(isolate);
     obj->Set(String::NewFromUtf8(isolate, "value"), Boolean::New(isolate, true));
