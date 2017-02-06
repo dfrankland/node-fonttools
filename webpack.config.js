@@ -55,6 +55,6 @@ export default {
   ],
   target: 'node',
   node: {
-    __dirname: true,
+    __dirname: false,
   },
 };
