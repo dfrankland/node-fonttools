@@ -2,7 +2,7 @@
 #include <node_buffer.h>
 #include <Python/Python.h>
 
-namespace demo {
+namespace fonttools {
   using v8::FunctionCallbackInfo;
   using v8::Isolate;
   using v8::Boolean;
