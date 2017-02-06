@@ -5,7 +5,7 @@
   "repository": "https://github.com/dfrankland/node-fonttools.git",
   "author": "Dylan Frankland <dylan@frankland.io>",
   "license": "MIT",
-  "main": "./build/index.js",
+  "main": "build/index.js",
   "files": [
     "binding.gyp",
     "src/fonttools.cc",
@@ -17,7 +17,7 @@
     "build:addons": "node-gyp build",
     "prebuild": "npm run build:addons",
     "build": "babel-node ./node_modules/.bin/webpack",
-    "preinstall": "npm run build:addons",
+    "postinstall": "npm run build:addons",
     "prepublish": "npm run build",
     "pretest": "npm run build",
     "test": "tape ./test/index.js | tap-spec"
