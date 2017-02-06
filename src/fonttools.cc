@@ -91,7 +91,7 @@ namespace fonttools {
     // Add current working directory to path
     PyObject *sys = PyImport_ImportModule("sys");
     PyObject *path = PyObject_GetAttrString(sys, "path");
-    PyList_Append(path, PyString_FromString(fontToolsPath));
+    PyList_Insert(path, 0, PyString_FromString(fontToolsPath));
 
     // Get TTFont function
     PyObject *ttLib = PyImport_ImportModule("fontTools.ttLib");
