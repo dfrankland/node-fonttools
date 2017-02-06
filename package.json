@@ -1,6 +1,6 @@
 {
   "name": "fonttools",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "Native bindings to `fonttools` to decompile and compile fonts.",
   "repository": "https://github.com/dfrankland/node-fonttools.git",
   "author": "Dylan Frankland <dylan@frankland.io>",
