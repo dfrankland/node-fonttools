@@ -15,6 +15,10 @@ exactly what `node-fontools` does.
 So far, the only functions that have been bridged are the abilities to decompile
 fonts to XML and compile XML to font binary.
 
+### Requirements
+
+Python 2.7 is the only supported version at the moment.
+
 ## How To Use
 
 ```js
