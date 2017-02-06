@@ -4,14 +4,14 @@ import { resolve as resolvePath } from 'path';
 
 const dir = {
   src: resolvePath(__dirname, './src'),
-  build: resolvePath(__dirname, './build'),
+  dist: resolvePath(__dirname, './dist'),
 };
 
 export default {
   context: dir.src,
   entry: dir.src,
   output: {
-    path: dir.build,
+    path: dir.dist,
     filename: 'index.js',
     libraryTarget: 'commonjs2',
   },

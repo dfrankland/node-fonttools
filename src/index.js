@@ -1,5 +1,5 @@
 import { resolve as resolvePath } from 'path';
-import fonttools from './Release/fonttools.node';
+import fonttools from '../build/Release/fonttools.node';
 
 export const DEFAULT_FONTTOOLS = resolvePath(__dirname, '../fonttools/Lib');
 
