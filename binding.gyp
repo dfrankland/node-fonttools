@@ -9,8 +9,7 @@
                     {
                         'link_settings': {
                             'libraries': [
-                                '/System/Library/Frameworks/Python.framework',
-                                # '/usr/local/Cellar/python/2.7.13/Frameworks/Python.framework',
+                                '<!(["python-config", "--prefix"])/Python'
                             ]
                         },
                         'xcode_settings': {
