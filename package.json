@@ -1,0 +1,55 @@
+{
+  "name": "fonttools",
+  "version": "1.0.0",
+  "description": "Native bindings to `fonttools` to decompile and compile fonts.",
+  "repository": "https://github.com/dfrankland/node-fonttools.git",
+  "author": "Dylan Frankland <dylan@frankland.io>",
+  "license": "MIT",
+  "main": "build/index.js",
+  "files": [
+    "binding.gyp",
+    "src/fonttools.cc",
+    "fonttools",
+    "build/index.js"
+  ],
+  "scripts": {
+    "prebuild:addons": "node-gyp configure",
+    "build:addons": "node-gyp build",
+    "prebuild": "npm run build:addons",
+    "build": "babel-node ./node_modules/.bin/webpack",
+    "preinstall": "npm run build:addons",
+    "prepublish": "npm run build",
+    "pretest": "npm run build",
+    "test": "tape ./test/index.js | tap-spec"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.22.2",
+    "babel-core": "^6.22.1",
+    "babel-loader": "^6.2.10",
+    "babel-preset-babili": "^0.0.10",
+    "babel-preset-env": "^1.1.8",
+    "babel-preset-stage-0": "^6.22.0",
+    "source-map-support": "^0.4.11",
+    "tap-spec": "^4.1.1",
+    "tape": "^4.6.3",
+    "uglify-js": "^2.7.5",
+    "uglifyjs-webpack-plugin": "^0.1.3",
+    "webpack": "^2.2.1"
+  },
+  "dependencies": {
+    "node-gyp": "^3.5.0"
+  },
+  "babel": {
+    "presets": [
+      [
+        "env",
+        {
+          "targets": {
+            "node": "current"
+          }
+        }
+      ],
+      "stage-0"
+    ]
+  }
+}

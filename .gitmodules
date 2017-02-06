@@ -1,0 +1,4 @@
+[submodule "fonttools"]
+	path = fonttools
+	url = https://github.com/fonttools/fonttools.git
+	branch = 3.6.2
