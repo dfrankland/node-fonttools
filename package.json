@@ -5,39 +5,31 @@
   "repository": "https://github.com/dfrankland/node-fonttools.git",
   "author": "Dylan Frankland <dylan@frankland.io>",
   "license": "MIT",
-  "main": "dist/index.js",
+  "main": "./native/index.node",
   "files": [
-    "binding.gyp",
-    "src/fonttools.cc",
-    "fonttools",
-    "dist"
+    "native"
   ],
   "scripts": {
-    "prebuild:addons": "node-gyp configure",
-    "build:addons": "node-gyp build",
-    "prebuild": "npm run build:addons",
-    "build": "babel-node ./node_modules/.bin/webpack",
-    "prepublishOnly": "npm run build",
+    "build": "neon build",
     "pretest": "npm run build",
-    "test": "tape ./test/index.js | tap-spec"
+    "test": "jest",
+    "lint": "eslint -c ./package.json ./"
   },
   "devDependencies": {
-    "babel-cli": "^6.22.2",
-    "babel-core": "^6.22.1",
-    "babel-loader": "^6.2.10",
-    "babel-preset-babili": "^0.0.10",
+    "babel-eslint": "^8.2.5",
+    "babel-jest": "^23.2.0",
     "babel-preset-env": "^1.1.8",
     "babel-preset-stage-0": "^6.22.0",
-    "source-map-support": "^0.4.11",
-    "tap-spec": "^4.1.1",
-    "tape": "^4.6.3",
-    "uglify-js": "^2.7.5",
-    "uglifyjs-webpack-plugin": "^0.1.3",
-    "webpack": "^2.2.1"
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^17.0.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-jest": "^21.17.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.10.0",
+    "jest": "^23.2.0",
+    "neon-cli": "^0.1.23"
   },
-  "dependencies": {
-    "node-gyp": "^3.5.0"
-  },
+  "dependencies": {},
   "babel": {
     "presets": [
       [
@@ -49,6 +41,17 @@
         }
       ],
       "stage-0"
+    ]
+  },
+  "eslintConfig": {
+    "parser": "babel-eslint",
+    "extends": "airbnb",
+    "env": {
+      "browser": true,
+      "jest/globals": true
+    },
+    "plugins": [
+      "jest"
     ]
   }
 }

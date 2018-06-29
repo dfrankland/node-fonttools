@@ -1,0 +1,14 @@
+[package]
+name = "node-fonttools"
+version = "0.0.0"
+build = "build.rs"
+
+[lib]
+name = "node_fonttools"
+crate-type = ["dylib"]
+
+[build-dependencies]
+neon-build = "0.1.22"
+
+[dependencies]
+neon = "0.1.22"
