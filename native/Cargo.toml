@@ -12,3 +12,4 @@ neon-build = "0.1.23"
 
 [dependencies]
 neon = "0.1.23"
+pyo3 = "0.2.7"

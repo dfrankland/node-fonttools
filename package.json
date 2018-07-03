@@ -5,7 +5,7 @@
   "repository": "https://github.com/dfrankland/node-fonttools.git",
   "author": "Dylan Frankland <dylan@frankland.io>",
   "license": "MIT",
-  "main": "./native/index.node",
+  "main": "./index.js",
   "files": [
     "native"
   ],

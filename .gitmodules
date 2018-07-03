@@ -1,4 +1,4 @@
-[submodule "fonttools"]
-	path = fonttools
-	url = https://github.com/fonttools/fonttools.git
-	branch = 3.6.2
+[submodule "native/fonttools"]
+  path = native/fonttools
+  url = https://github.com/fonttools/fonttools.git
+  branch = 3.28.0

@@ -1,18 +1,21 @@
 #[macro_use]
 extern crate neon;
+extern crate pyo3;
+
+mod prelude;
+mod python;
+mod js;
+mod logging;
 
 use neon::{
-    vm::{Call, JsResult},
+    mem::Handle,
     js::{
         Object,
-        JsObject, JsBoolean, JsString
+        JsObject, JsBoolean, JsFunction,
+        class::{Class, JsClass},
     },
 };
-
-#[allow(unknown_lints, needless_pass_by_value)]
-fn default(call: Call) -> JsResult<JsString> {
-    JsString::new_or_throw(call.scope, "Hello World")
-}
+use js::JsFontTools;
 
 register_module!(
     module,
@@ -22,7 +25,11 @@ register_module!(
         es_module.set("value", JsBoolean::new(module.scope, true))?;
         module.exports.set("__esModule", es_module)?;
 
-        // Export default function
-        module.export("default", default)
+        // Export default
+        let class: Handle<JsClass<JsFontTools>> = JsFontTools::class(module.scope)?;
+        let constructor: Handle<JsFunction<JsFontTools>> = class.constructor(module.scope)?;
+        module.exports.set("default", constructor)?;
+
+        Ok(())
     }
 );
